@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8900
 
-ENTRYPOINT ["poetry", "run", "streamlit", "run", "./TrekReturns/main.py", "--server.port=8900", "--server.address=0.0.0.0"]
+ENTRYPOINT ["poetry", "run", "streamlit", "run", "./trekreturns/main.py", "--server.port=8900", "--server.address=0.0.0.0"]
