@@ -52,7 +52,7 @@ docker build -t TrekReturns .
 ```
 then run the container (the image exposes port 8900)
 ```shell
-docker run --rm -p 8080:8900 TrekReturns .
+docker run --rm -p 8080:8900 TrekReturns
 ```
 Now you can reach it from your web browser on port `8080`
 
