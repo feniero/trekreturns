@@ -172,7 +172,7 @@ try:
 
     #rolling ret - hist chart
     hist = px.histogram(portfolio.dropna(), 
-        opacity=0.4, nbins=80, 
+        opacity=0.4, nbins=120, 
         title="Histogram of Portfolio Returns"
     )
     hist.update_layout(
