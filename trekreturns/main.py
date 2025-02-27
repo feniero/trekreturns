@@ -103,7 +103,7 @@ try:
     data = yf.download(valid_tickers, interval='1mo')["Close"]
     data = data.reindex(valid_tickers, axis=1)
     data.fillna(method="ffill", limit=1, inplace=True)
-    st.success(f"Cool!:sunglasses: We got data from **{data.dropna().index[0].strftime("%Y-%m-%d")} and {data.dropna().index[-1].strftime("%Y-%m-%d")}** ")
+    st.success(f"Cool!:sunglasses: We got data from **{data.dropna().index[0].strftime("%Y-%m-%d")} to {data.dropna().index[-1].strftime("%Y-%m-%d")}** ")
 
 except Exception as e:
     st.error(":scream: Failed retrieve tickers data...")
