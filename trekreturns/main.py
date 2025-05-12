@@ -4,6 +4,8 @@ import pandas as pd
 import yfinance as yf
 import plotly.express as px
 
+import plotly.graph_objects as go
+
 #Import functions
 from functions import normalize_data
 from functions import roll_returns
@@ -115,16 +117,29 @@ try:
     st.subheader(":pushpin: Display price normalized data")
     data_normaliz = normalize_data(data)
     data_normaliz
-
-    ## normalized data - chart
+    
+    ## normalized data - charts
     st.write("Now... price chart! You can compare how assets were going through the years.")
-    dn_chart=px.line(data_normaliz, title='Price normalization chart')
+    dn_chart = px.line(data_normaliz, title='Price Normalization Chart')
+    
+    # User option to select y-axis scale // log or linear chart
+    scale_option = st.radio(
+        "Select Y-axis scale:",
+        options=["Linear", "Log"],
+        index=0,
+        horizontal=True
+    )
+    
+    # Update layout based on selected scale
     dn_chart.update_layout(
         xaxis_title="Date",
         yaxis_title="Price",
+        yaxis_type="linear" if scale_option == "Linear" else "log",
         hovermode="x unified"
     )
+    
     st.plotly_chart(dn_chart, use_container_width=True)
+
 except Exception as e:
     st.error(":scream: Failed normalized data...")
     #st.error(f"Error: {e}")
