@@ -5,7 +5,9 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pip"
+  #Python with Poetry
+  - package-ecosystem: "poetry"
     directory: "/"
     schedule:
-      interval: monthly
+      interval: "weekly"
+    open-pull-requests-limit: 5
