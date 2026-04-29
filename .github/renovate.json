@@ -1,6 +1,40 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":timezone(Europe/Berlin)"
+    ],
+    "schedule": [
+        ["0 5 1 * *"]
+    ],
+
+    "prConcurrentLimit": 5,
+    "prHourlyLimit": 2,
+
+    "rangeStrategy": "bump",
+
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["patch"],
+            "groupName": "all patch updates"
+        },
+        {
+            "matchUpdateTypes": ["minor"],
+            "groupName": "all minor updates"
+        },
+        {
+            "matchUpdateTypes": ["major"],
+            "groupName": null
+        }
+    ],
+
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": [
+            ["0 5 1 * *"]
+        ]
+    },
+
+    "dependencyDashboard": true,
+    "dependencyDashboardTitle": "Renovate Dashboard 🤖"
 }
