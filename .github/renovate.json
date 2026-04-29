@@ -5,7 +5,7 @@
         ":timezone(Europe/Berlin)"
     ],
     "schedule": 
-       ["0 5 * * *"],
+       ["* 5 1 * *"],
 
     "prConcurrentLimit": 5,
     "prHourlyLimit": 2,
