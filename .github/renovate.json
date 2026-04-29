@@ -4,9 +4,8 @@
         "config:recommended",
         ":timezone(Europe/Berlin)"
     ],
-    "schedule": [
-        ["0 5 1 * *"]
-    ],
+    "schedule": 
+       ["0 5 1 * *"],
 
     "prConcurrentLimit": 5,
     "prHourlyLimit": 2,
@@ -29,10 +28,7 @@
     ],
 
     "lockFileMaintenance": {
-        "enabled": true,
-        "schedule": [
-            ["0 5 1 * *"]
-        ]
+        "enabled": true
     },
 
     "dependencyDashboard": true,
